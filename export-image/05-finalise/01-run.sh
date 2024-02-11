@@ -85,8 +85,22 @@ cp "$ROOTFS_DIR/etc/rpi-issue" "$INFO_FILE"
 
 ROOT_DEV="$(mount | grep "${ROOTFS_DIR} " | cut -f1 -d' ')"
 
+if [ "{FILE_SYSTEM_TYPE}" != "ext4" ]; then
+	cd "${ROOTFS_DIR}"
+	mkdir zerofree
+	if [ "{FILE_SYSTEM_TYPE}" == "btrfs" ]; then
+		btrfs property set zerofree compression none
+	fi
+	cat /dev/zero > zerofree/zero 2>&1 /dev/null || true
+	rm -r zerofree
+	cd -
+fi
+
 unmount "${ROOTFS_DIR}"
-zerofree "${ROOT_DEV}"
+
+if [ "{FILE_SYSTEM_TYPE}" == "ext4" ]; then
+	zerofree "${ROOT_DEV}"
+fi
 
 unmount_image "${IMG_FILE}"
 
