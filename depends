@@ -17,6 +17,9 @@ file
 git
 lsmod:kmod
 bc
+kpartx
+sgdisk:gdisk
 gpg
 pigz
 arch-test
+btrfs:btrfs-progs
