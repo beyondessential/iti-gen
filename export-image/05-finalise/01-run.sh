@@ -110,6 +110,10 @@ xz)
 	xz --compress --force --threads 0 --memlimit-compress=50% -"${COMPRESSION_LEVEL}" \
 	--stdout "$IMG_FILE" > "${DEPLOY_DIR}/${ARCHIVE_FILENAME}${IMG_SUFFIX}.img.xz"
 	;;
+zstd)
+	zstd --force -T0 -"${COMPRESSION_LEVEL}" "$IMG_FILE" \
+        -o "${DEPLOY_DIR}/${ARCHIVE_FILENAME}${IMG_SUFFIX}.img.zst"
+	;;
 none | *)
 	cp "$IMG_FILE" "$DEPLOY_DIR/"
 ;;
