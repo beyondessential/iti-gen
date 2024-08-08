@@ -1,4 +1,5 @@
 deploy/*
 work/*
+SKIP
 .pc
 *-pc
