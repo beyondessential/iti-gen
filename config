@@ -1,6 +1,8 @@
 # vim: ft=bash
 
-IMG_NAME="iti3-bookworm-arm64"
+ARCH=arm64
+RELEASE=bookworm
+IMG_NAME="iti3-$RELEASE-$ARCH"
 PI_GEN_RELEASE="Tamanu Iti"
 DEPLOY_COMPRESSION="zstd"
 COMPRESSION_LEVEL="-adapt"
@@ -13,6 +15,7 @@ FIRST_USER_PASS="iti"
 DISABLE_FIRST_BOOT_USER_RENAME=1
 WPA_COUNTRY=NZ
 ENABLE_SSH=1
+SETFCAP=1
 
 # from sithmein's patches
 FILE_SYSTEM_TYPE=btrfs
