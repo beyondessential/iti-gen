@@ -13,3 +13,7 @@ rm *.service
 install -vm644 * "${ROOTFS_DIR}/usr/local/bin/"
 popd
 rm -rf bestool
+
+on_chroot << EOF
+systemctl enable iti-lcd-server.service iti-battery.service
+EOF
