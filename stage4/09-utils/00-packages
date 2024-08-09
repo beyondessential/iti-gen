@@ -1,0 +1,3 @@
+ca-certificates curl gnupg software-properties-common tzdata
+jq neovim ripgrep fish mosh
+iftop iotop nethogs lm-sensors

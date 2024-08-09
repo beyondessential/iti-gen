@@ -1,0 +1,9 @@
+cockpit
+cockpit-networkmanager
+cockpit-packagekit
+cockpit-pcp
+cockpit-podman
+cockpit-sosreport
+cockpit-storaged
+cockpit-system
+cockpit-ws
