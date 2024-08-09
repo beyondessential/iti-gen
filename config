@@ -20,3 +20,6 @@ SETFCAP=1
 # from sithmein's patches
 FILE_SYSTEM_TYPE=btrfs
 PARTITION_TABLE_TYPE=gpt
+
+# iti
+export BESTOOL_VERSION="0.15.2"
