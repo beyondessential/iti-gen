@@ -20,6 +20,7 @@ echo 'PSU_MAX_CURRENT=5000' >> /tmp/eeprom.txt
 rpi-eeprom-config --apply /tmp/eeprom.txt
 rm -f /tmp/eeprom.txt
 EOF
+chmod +x "${ROOTFS_DIR}/usr/local/bin/iti-boot-config"
 
 cat <<EOF >> "${ROOTFS_DIR}/etc/systemd/system/iti-boot-config.service"
 [Unit]

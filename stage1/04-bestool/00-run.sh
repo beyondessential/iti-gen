@@ -10,7 +10,7 @@ git switch --detach "v${BESTOOL_VERSION}"
 cd services
 install -vm644 *.service "${ROOTFS_DIR}/etc/systemd/system/"
 rm *.service
-install -vm644 * "${ROOTFS_DIR}/usr/local/bin/"
+install -vm755 * "${ROOTFS_DIR}/usr/local/bin/"
 popd
 rm -rf bestool
 
