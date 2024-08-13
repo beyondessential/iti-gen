@@ -2,3 +2,4 @@ dtparam=i2c_arm=on
 dtparam=spi=on
 dtparam=pciex1
 dtparam=pciex1_gen=3
+dtparam=rtc_bbat_vchg=3000000
