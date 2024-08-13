@@ -2,8 +2,8 @@
 Description=Check if the battery is well seated
 
 [Timer]
-OnBootSec=5sec
-OnUnitActiveSec=5sec
+OnBootSec=15sec
+OnUnitActiveSec=10sec
 
 [Install]
 WantedBy=timers.target

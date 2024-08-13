@@ -6,4 +6,3 @@ echo 'PCIE_PROBE=1' >> /tmp/eeprom.txt
 echo 'PSU_MAX_CURRENT=5000' >> /tmp/eeprom.txt
 rpi-eeprom-config --apply /tmp/eeprom.txt
 rm -f /tmp/eeprom.txt
-EOF

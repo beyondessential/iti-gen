@@ -2,8 +2,8 @@
 Description=Run iti boot config on every boot
 
 [Timer]
-OnBootSec=5sec
-OnUnitActiveSec=1min
+OnBootSec=15sec
+OnUnitActiveSec=10sec
 
 [Install]
 WantedBy=timers.target
