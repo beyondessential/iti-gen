@@ -1,0 +1,7 @@
+[Unit]
+Description=Iti Boot Config
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/iti-boot-config
+RemainAfterExit=true
