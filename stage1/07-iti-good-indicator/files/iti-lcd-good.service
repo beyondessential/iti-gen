@@ -1,0 +1,7 @@
+[Unit]
+Description=Display hardware-good indicator on LCD
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/iti-lcd-good
+RemainAfterExit=true

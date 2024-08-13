@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+# check that we can read the battery and get a cell voltage above 1V
+if { bestool iti battery --json || true; } | grep -P '"vcell":[1-9]'; then
+    bestool iti lcd clear 0 255 0
+else
+    bestool iti lcd clear 255 0 0
+fi
