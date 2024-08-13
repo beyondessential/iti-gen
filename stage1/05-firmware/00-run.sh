@@ -12,6 +12,7 @@ EOF
 # that sets eeprom settings for hardware options (boot order, pcie, halt)
 # order: SD as override, NVMe as primary, no USB boot
 cat <<EOF >> "${ROOTFS_DIR}/usr/local/bin/iti-boot-config"
+#!/bin/sh
 rpi-eeprom-config | sed -E '/(POWER_OFF_ON_HALT|BOOT_ORDER|PCIE_PROBE|PSU_MAX_CURRENT)=.+/d' > /tmp/eeprom.txt
 echo 'POWER_OFF_ON_HALT=1' >> /tmp/eeprom.txt
 echo 'BOOT_ORDER=0xf61' >> /tmp/eeprom.txt
