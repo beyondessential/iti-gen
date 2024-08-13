@@ -14,6 +14,8 @@ install -vm755 * "${ROOTFS_DIR}/usr/local/bin/"
 popd
 rm -rf bestool
 
+echo 'i2c-dev' > "${ROOTFS_DIR}/etc/modules-load.d/modules.conf"
+
 on_chroot << EOF
 systemctl enable iti-lcd-server.service iti-battery.service
 EOF
