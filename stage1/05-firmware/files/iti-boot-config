@@ -1,8 +1,9 @@
 #!/bin/sh
-rpi-eeprom-config | sed -E '/(POWER_OFF_ON_HALT|BOOT_ORDER|PCIE_PROBE|PSU_MAX_CURRENT)=.+/d' > /tmp/eeprom.txt
+rpi-eeprom-config | sed -E '/(POWER_OFF_ON_HALT|BOOT_ORDER|PCIE_PROBE|PSU_MAX_CURRENT|BOOT_UART)=.+/d' > /tmp/eeprom.txt
 echo 'POWER_OFF_ON_HALT=1' >> /tmp/eeprom.txt
 echo 'BOOT_ORDER=0xf61' >> /tmp/eeprom.txt
 echo 'PCIE_PROBE=1' >> /tmp/eeprom.txt
 echo 'PSU_MAX_CURRENT=5000' >> /tmp/eeprom.txt
+echo 'BOOT_UART=1' >> /tmp/eeprom.txt
 rpi-eeprom-config --apply /tmp/eeprom.txt
 rm -f /tmp/eeprom.txt
