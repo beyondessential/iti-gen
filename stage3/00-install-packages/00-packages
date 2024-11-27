@@ -5,11 +5,10 @@ git
 policykit-1
 gvfs
 rfkill
-chromium-browser rpi-chromium-mods libwidevinecdm0
+chromium rpi-chromium-mods libwidevinecdm0
 firefox rpi-firefox-mods
 gldriver-test
 fonts-droid-fallback
 fonts-liberation2
 obconf
-arandr
 vulkan-tools mesa-vulkan-drivers

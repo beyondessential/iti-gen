@@ -11,8 +11,6 @@ install -m 644 files/50raspi		"${ROOTFS_DIR}/etc/apt/apt.conf.d/"
 
 install -m 644 files/console-setup   	"${ROOTFS_DIR}/etc/default/"
 
-install -m 755 files/rc.local		"${ROOTFS_DIR}/etc/"
-
 install -m 755 files/sgdisk-hook		"${ROOTFS_DIR}/etc/initramfs-tools/hooks/sgdisk"
 
 install -m 755 files/btrfstune-hook		"${ROOTFS_DIR}/etc/initramfs-tools/hooks/btrfstune"
@@ -76,3 +74,9 @@ sed -i "s/PLACEHOLDER//" "${ROOTFS_DIR}/etc/default/keyboard"
 on_chroot << EOF
 DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
 EOF
+
+sed -i 's/^#?Storage=.*/Storage=volatile/' "${ROOTFS_DIR}/etc/systemd/journald.conf"
+
+if [ -e "${ROOTFS_DIR}/etc/avahi/avahi-daemon.conf" ]; then
+  sed -i 's/^#?publish-workstation=.*/publish-workstation=yes/' "${ROOTFS_DIR}/etc/avahi/avahi-daemon.conf"
+fi
